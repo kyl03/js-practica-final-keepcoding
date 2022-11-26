@@ -10,14 +10,14 @@ const rl = readline.createInterface({
 let students = [{
   age: 30,
   examScores: [],
-  gender: 'male',
-  nameS: 'edu'
+  gender: 'female',
+  nameS: 'zaira'
 },
 {
   age: 25,
   examScores: [],
-  gender: 'male',
-  nameS: 'Cesar'
+  gender: 'female',
+  nameS: 'ana'
 }];
 const availableMaleNames = ['pepe', 'juan', 'victor', 'Leo', 'francisco', 'carlos', 'kai'];
 const availableFemaleNames = ['cecilia', 'ana', 'luisa', 'sara', 'isabel', 'virginia', 'karen'];
