@@ -8,7 +8,7 @@ const rl = readline.createInterface({
 
 //array solo male, mix age, para testeo
 let students = [{
-  age: 30,
+  age: 20,
   examScores: [],
   gender: 'female',
   nameS: 'zaira'
