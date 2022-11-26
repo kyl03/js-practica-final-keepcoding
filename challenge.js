@@ -6,7 +6,7 @@ const rl = readline.createInterface({
   output: process.stdout
 });
 
-//array solo male 25++, para testeo
+//array solo male, mix age, para testeo
 let students = [{
   age: 30,
   examScores: [],
@@ -14,7 +14,7 @@ let students = [{
   nameS: 'edu'
 },
 {
-  age: 35,
+  age: 25,
   examScores: [],
   gender: 'male',
   nameS: 'Cesar'
