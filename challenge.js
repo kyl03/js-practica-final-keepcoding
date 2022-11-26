@@ -6,18 +6,31 @@ const rl = readline.createInterface({
   output: process.stdout
 });
 
-//array solo male, mix age, para testeo
+//array mix, mix age, para testeo
 let students = [{
-  age: 40,
+  age: 32,
   examScores: [],
-  gender: 'female',
-  nameS: 'zaira'
+  gender: 'male',
+  nameS: 'edu'
 },
 {
-  age: 35,
+  age: 22,
   examScores: [],
   gender: 'female',
-  nameS: 'ana'
+  nameS: 'silvia'
+}
+,
+{
+  age: 52,
+  examScores: [],
+  gender: 'female',
+  nameS: 'alicia'
+},
+{
+  age: 20,
+  examScores: [],
+  gender: 'male',
+  nameS: 'mauricio'
 }];
 const availableMaleNames = ['pepe', 'juan', 'victor', 'Leo', 'francisco', 'carlos', 'kai'];
 const availableFemaleNames = ['cecilia', 'ana', 'luisa', 'sara', 'isabel', 'virginia', 'karen'];
@@ -122,7 +135,9 @@ async function startApp() {
         // ### 8- Mostrar true o false por consola si todos los alumnos de la clase son chicas.
         if(students.length>0){
           console.log(students.every(student => student.gender == 'female'));
-        } 
+        } else{
+          console.log("No hay alumnos en la lista.")
+        }
         break;
       case 9:
         // ### 9- Mostrar por consola los nombres de los alumnos que tengan entre 20 y 25 años.
