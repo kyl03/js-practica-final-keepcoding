@@ -6,9 +6,19 @@ const rl = readline.createInterface({
   output: process.stdout
 });
 
-//array vacia para testeo
-let students = [];
-
+//array solo male 20-25, para testeo
+let students = [{
+  age: 20,
+  examScores: [],
+  gender: 'male',
+  nameS: 'edu'
+},
+{
+  age: 25,
+  examScores: [],
+  gender: 'male',
+  nameS: 'Cesar'
+}];
 const availableMaleNames = ['pepe', 'juan', 'victor', 'Leo', 'francisco', 'carlos', 'kai'];
 const availableFemaleNames = ['cecilia', 'ana', 'luisa', 'sara', 'isabel', 'virginia', 'karen'];
 const availableGenders = ['male', 'female'];
@@ -116,9 +126,9 @@ async function startApp() {
         break;
       case 9:
         // ### 9- Mostrar por consola los nombres de los alumnos que tengan entre 20 y 25 años.
-        try {
-          console.table(students.filter(student => student.age >= 20 && student.age <= 25), 'nameS').forEach(n => console.log(n.nameS));
-        } catch (error) {
+        if(students.length>0){
+          students.filter(student => student.age >= 20 && student.age <= 25).forEach(n => console.log(n.nameS));
+        } else{
           console.log("No hay alumnos que cumplan ese requisito");
         }
 
