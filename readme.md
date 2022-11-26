@@ -1,6 +1,8 @@
 # Classroom management
   Práctica final del módulo de Introducción a Javascript que consiste en mostrar por consola un menú de opciones al usuario que le permite manejar datos de alumnos.
+
   Requisitos de la práctica:
+    
     Partiremos de un listado de alumnos inicial:
     ```
       const students = [{
