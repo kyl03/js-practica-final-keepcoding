@@ -103,7 +103,9 @@ async function startApp() {
         break;
       case 3:
         // ### 3- Mostrar por consola todos los nombres de los alumnos.
-        students.forEach((n) => console.log(n.nameS));
+        if(students.length>0){
+          students.forEach((n) => console.log(n.nameS));
+        }
         break;
       case 4:
         // ### 4- Eliminar el último alumno de la clase.
@@ -195,7 +197,9 @@ async function startApp() {
         break;
       case 14:
         // ### 14- Añadir nueva nota a los alumnos. Por cada alumno de la clase, tendremos que calcular una nota de forma aleatoria(número entre 0 y 10) y añadirla a su listado de notas.
-        students.forEach(student => student.examScores.push(randomIntFromInterval(0, 10)))
+        if(students.length>0){
+          students.forEach(student => student.examScores.push(randomIntFromInterval(0, 10)));
+        }
         break;
       case 15:
         // ### 15- Ordenar el array de alumnos alfabéticamente según su nombre.
