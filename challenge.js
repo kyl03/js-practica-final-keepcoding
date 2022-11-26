@@ -27,7 +27,7 @@ let students = [{
   nameS: 'alicia'
 },
 {
-  age: 34,
+  age: 24,
   examScores: [],
   gender: 'male',
   nameS: 'mauricio'
@@ -163,9 +163,11 @@ async function startApp() {
       case 11:
         // ### 11- Mostrar por consola el nombre de la persona más joven de la clase.
         // ¡OJO!, si varias personas de la clase comparten la edad más baja, cualquiera de ellos es una respuesta válida.
-        if(students.length>0){
-          students.sort((a, b) => a.age - b.age);
-          console.log(students[0].nameS);
+        //hacer copia del array students para no modificar el orden de students.
+        let sortedByAgeArray = [...students];
+        if(sortedByAgeArray.length>0){
+          sortedByAgeArray.sort((a, b) => a.age - b.age);
+          console.log(sortedByAgeArray[0].nameS);
         } else{
           console.log("No hay alumnos en la lista.");
         }
@@ -248,6 +250,8 @@ async function startApp() {
         }
       
         break;
+        default:
+          process.exit(0);
     }
   }
 
