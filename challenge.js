@@ -212,9 +212,11 @@ async function startApp() {
       case 16:
         // ### 16- Mostrar por consola el alumno de la clase con las mejores notas.
         // El alumno con mejores notas es aquel cuyo sumatorio de todas sus notas es el valor más alto de todos.
-        //reduce students scores and sort students by those scores (descending). Then get the first element.nameS of the array.
+        //create variable in order to not change students array. 
+        //Reduce students scores and sort students by those scores (descending). Then get the first element.nameS of the array.
         if(students.length>0){
-          console.log(students.sort((a, b) => b.examScores.reduce((sum, n) => sum + n, 0) - a.examScores.reduce((sum, n) => sum + n, 0))[0].nameS);
+          let sortedByBestGrade = [...students];
+          console.log(sortedByBestGrade.sort((a, b) => b.examScores.reduce((sum, n) => sum + n, 0) - a.examScores.reduce((sum, n) => sum + n, 0))[0].nameS);
         } else{
           console.log("No hay alumnos en la lista.")
         }
@@ -222,12 +224,14 @@ async function startApp() {
       case 17:
         // ### 17- Mostrar por consola la nota media más alta de la clase y el nombre del alumno al que pertenece.
         if(students.length>0){
-          let studentWithHighestScore = students.sort((a, b) => b.examScores.reduce((sum, n) => sum + n, 0) / b.examScores.length - a.examScores.reduce((sum, n) => sum + n, 0) / a.examScores.length)[0];
+          let sortedByBestGrade = [...students];
+          //get student with highest average score
+          let studentWithHighestScore = sortedByBestGrade.sort((a, b) => b.examScores.reduce((sum, n) => sum + n, 0) / b.examScores.length - a.examScores.reduce((sum, n) => sum + n, 0) / a.examScores.length)[0];
+          //get average score of best student
           let averageScoreOfBestStudent= 0;
           if (studentWithHighestScore.examScores.length>0){
             averageScoreOfBestStudent = studentWithHighestScore.examScores.reduce((sum, n) => sum + n, 0) / studentWithHighestScore.examScores.length;
           }
-          //console.log(studentWithHighestScore.examScores);
           console.log("Nota media mas alta: " + averageScoreOfBestStudent);
           console.log("Nombre del estudiante: " + studentWithHighestScore.nameS);
         } else{
